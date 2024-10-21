@@ -37,12 +37,12 @@
             </font>
         </Text>
         <TextField fx:id="field_output" editable="false" layoutX="18.0" layoutY="420.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
-        <Button fx:id="btn_encrypt" layoutX="20.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleEncryptButton" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #1f1717;" stylesheets="@playfair_cipher_frontend.css" text="ENCRYPT" textFill="#eedbbf">
+        <Button fx:id="btn_encrypt" layoutX="20.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleEncryptButton" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #1f1717;" text="ENCRYPT" textFill="#eedbbf">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button fx:id="btn_decrypt" layoutX="185.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleDecryptButton" onKeyPressed="#handleDecryptButton" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #1f1717;" stylesheets="@playfair_cipher_frontend.css" text="DECRYPT" textFill="#eedbbf">
+        <Button fx:id="btn_decrypt" layoutX="185.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleDecryptButton" onKeyPressed="#handleDecryptButton" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #1f1717;" text="DECRYPT" textFill="#eedbbf">
             <font>
                 <Font size="18.0" />
             </font>
@@ -366,7 +366,7 @@
             <Font name="Roboto Mono Regular" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="field_input_filtered_encryption12" layoutX="18.0" layoutY="289.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+      <TextField fx:id="field_alphabet" layoutX="18.0" layoutY="289.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
       <RadioButton layoutX="58.0" layoutY="330.0" mnemonicParsing="false" styleClass="radio" stylesheets="@adfgvx_cipher_frontend.css" text="ENGLISH" textFill="#ab3130" />
       <RadioButton layoutX="142.0" layoutY="330.0" mnemonicParsing="false" styleClass="radio" stylesheets="@adfgvx_cipher_frontend.css" text="SLOVAK" textFill="#ab3130" />
       <RadioButton layoutX="221.0" layoutY="330.0" mnemonicParsing="false" styleClass="radio" stylesheets="@adfgvx_cipher_frontend.css" text="CUSTOM" textFill="#ab3130" />

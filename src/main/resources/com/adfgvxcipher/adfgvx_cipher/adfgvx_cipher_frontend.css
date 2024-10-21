@@ -12,7 +12,7 @@
 }
 
 .gridLabelTitle {
-    -fx-text-fill: #EEDBBF;
+    -fx-text-fill: white;
 }
 
 .gridPane {
