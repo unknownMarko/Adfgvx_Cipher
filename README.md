@@ -1,5 +1,5 @@
 # ADFGVX Cipher
-![](https://github.com/unknownMarko/Adfgvx_Cipher/blob/main/screenshots/screenshot.png)
+![](https://github.com/unknownMarko/Adfgvx_Cipher/blob/master/screenshots/screenshot.png)
 
 The ADFGVX cipher is a World War I-era encryption method used by the German military in 1918.
 It combines a Polybius square with a columnar transposition.
