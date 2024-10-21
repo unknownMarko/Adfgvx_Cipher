@@ -13,7 +13,7 @@ public class AdfgvxCipher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AdfgvxCipher.class.getResource("adfgvx_cipher_frontend.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 550);
         stage.setTitle("Adfgvx Cipher");
         stage.setResizable(false);
         stage.setScene(scene);
