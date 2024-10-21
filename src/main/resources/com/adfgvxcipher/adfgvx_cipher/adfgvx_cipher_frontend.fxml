@@ -1,16 +1,374 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.adfgvxcipher.adfgvx_cipher.Controller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="550.0" maxWidth="700.0" minHeight="550.0" minWidth="700.0" prefHeight="550.0" prefWidth="700.0" styleClass="background" stylesheets="@adfgvx_cipher_frontend.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.adfgvxcipher.adfgvx_cipher.Controller">
+    <children>
+        <Text fill="#ab3130" layoutX="219.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="&lt; Adfgvx Cipher &gt;" textAlignment="CENTER">
+            <font>
+                <Font name="Roboto Mono Medium" size="26.0" />
+            </font>
+        </Text>
+        <Text fill="#ab3130" layoutX="117.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titles" text="ENTER TEXT">
+            <font>
+                <Font name="Roboto Mono Regular" size="19.0" />
+            </font>
+        </Text>
+        <TextField fx:id="field_input" layoutX="18.0" layoutY="97.0" onKeyTyped="#handleInput" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+      <Text fill="#ab3130" layoutX="385.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtered Encryption Text" wrappingWidth="280.0">
+         <font>
+            <Font name="Roboto Mono Regular" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="field_input_filtered" editable="false" layoutX="369.0" layoutY="97.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+        <Text fill="#ab3130" layoutX="26.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encrypted / Decrypted Text" wrappingWidth="296.4482421875">
+            <font>
+                <Font name="Roboto Mono Regular" size="19.0" />
+            </font>
+        </Text>
+        <TextField fx:id="field_output" editable="false" layoutX="18.0" layoutY="420.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+        <Button fx:id="btn_encrypt" layoutX="20.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleEncryptButton" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #1f1717;" stylesheets="@playfair_cipher_frontend.css" text="ENCRYPT" textFill="#eedbbf">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="btn_decrypt" layoutX="185.0" layoutY="486.0" mnemonicParsing="false" onAction="#handleDecryptButton" onKeyPressed="#handleDecryptButton" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #1f1717;" stylesheets="@playfair_cipher_frontend.css" text="DECRYPT" textFill="#eedbbf">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <Text fill="#b2253345" layoutX="394.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="github.com/unknownMarko">
+         <font>
+            <Font name="Roboto Mono Regular" size="19.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="409.0" layoutX="451.0" layoutY="58.0" startX="-100.0" stroke="#ab3130" />
+      <Text fill="#ab3130" layoutX="491.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matrix" wrappingWidth="69.0">
+         <font>
+            <Font name="Roboto Mono Regular" size="19.0" />
+         </font>
+      </Text>
+      <GridPane fx:id="grid" gridLinesVisible="true" layoutX="450.0" layoutY="295.0" prefHeight="180.0" prefWidth="180.0" styleClass="gridPane" stylesheets="@adfgvx_cipher_frontend.css">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="gridLabel1" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel2" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel3" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel4" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel5" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel06" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel07" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel08" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel09" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel10" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel11" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel12" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel13" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel14" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel15" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel16" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel17" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel18" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel19" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel20" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel21" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel22" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel23" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel24" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel25" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel26" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel27" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel28" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel29" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel30" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel31" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel32" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel33" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel34" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel35" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="gridLabel36" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="?" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane gridLinesVisible="true" layoutX="418.0" layoutY="295.0" prefHeight="180.0" prefWidth="30.0" styleClass="gridPane" stylesheets="@adfgvx_cipher_frontend.css">
+        <columnConstraints>
+          <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="A" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="D" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="F" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="G" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="V" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="X" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane gridLinesVisible="true" layoutX="450.0" layoutY="263.0" prefHeight="30.0" prefWidth="182.0" styleClass="gridPane" stylesheets="@adfgvx_cipher_frontend.css">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabelTitle" stylesheets="@adfgvx_cipher_frontend.css" text="A">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="D" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="F" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="G" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="V" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="30.0" styleClass="gridLabel" stylesheets="@adfgvx_cipher_frontend.css" text="X" GridPane.columnIndex="5">
+               <font>
+                  <Font name="Roboto Mono Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <TextField fx:id="field_key" layoutX="18.0" layoutY="183.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+      <Text fill="#ab3130" layoutX="123.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titles" text="ENTER KEY">
+         <font>
+            <Font name="Roboto Mono Regular" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#ab3130" layoutX="457.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtered Key" wrappingWidth="137.0">
+         <font>
+            <Font name="Roboto Mono Regular" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="field_key_filtered" editable="false" layoutX="369.0" layoutY="183.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+      <Text fill="#ab3130" layoutX="129.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titles" text="Alphabet">
+         <font>
+            <Font name="Roboto Mono Regular" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="field_input_filtered_encryption12" layoutX="18.0" layoutY="289.0" prefHeight="34.0" prefWidth="313.0" styleClass="textfield" stylesheets="@adfgvx_cipher_frontend.css" />
+      <RadioButton layoutX="58.0" layoutY="330.0" mnemonicParsing="false" styleClass="radio" stylesheets="@adfgvx_cipher_frontend.css" text="ENGLISH" textFill="#ab3130" />
+      <RadioButton layoutX="142.0" layoutY="330.0" mnemonicParsing="false" styleClass="radio" stylesheets="@adfgvx_cipher_frontend.css" text="SLOVAK" textFill="#ab3130" />
+      <RadioButton layoutX="221.0" layoutY="330.0" mnemonicParsing="false" styleClass="radio" stylesheets="@adfgvx_cipher_frontend.css" text="CUSTOM" textFill="#ab3130" />
+    </children>
+</AnchorPane>
