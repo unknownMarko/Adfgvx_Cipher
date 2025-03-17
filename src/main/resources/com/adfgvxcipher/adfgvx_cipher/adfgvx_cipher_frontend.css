@@ -30,5 +30,20 @@
 }
 
 .radio-button:selected .radio {
-    -fx-background-color: #DDCA7D;
+    -fx-background-color: #a84140;
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+}
+
+.textarea {
+    -fx-background-color: #1f1717;
+    -fx-text-fill: #EEDBBF;
+}
+
+.textarea .content {
+    -fx-background-color: #1f1717;
+    -fx-background-radius: 0;
 }
